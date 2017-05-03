@@ -1,0 +1,18 @@
+<h1> Your Event Information </h1>
+<table style="width:100%" border=1>
+<thead>
+<tr> 
+<th> Event ID: </th>
+<th> Event Type ID: </th>
+<th> User ID: </th>
+<th> Guest List ID: </th>
+
+<% @events.each do |event| %>
+  <tr>
+  <td> <%= event.id %> </td>  
+  <td> <%= event.event_type_id %> </td>
+  <td> <%= event.user_id %> </td>
+  <td> <%= event.guest_list_id %> </td>
+  </tr>  
+<% end %> 
+</table>

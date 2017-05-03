@@ -1,0 +1,16 @@
+<h1> Checklist for your Event! </h1>
+<table style="width:100%" border=1>
+<thead>
+<tr>
+<th> Checklist Item ID: </th>
+<th> Description: </th>
+</tr>
+</thead>
+
+<% @checklistitems.each do |checklistitem| %>
+<tr> 
+<td> <%= checklistitem.id %> </td>
+<td> <%= checklistitem.description %> </td>
+<% end %> 
+</tr>
+</table>

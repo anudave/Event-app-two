@@ -1,0 +1,8 @@
+<h1> Event: </h1>
+
+<h4> Checklist: <%= @event_type.description %> </h4>
+<ul>
+<% @event_type.check_list_items.each do |check_list_item| %>
+  <li><%= check_list_item.description %></li>
+<% end %>  
+</ul>

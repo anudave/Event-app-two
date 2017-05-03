@@ -1,0 +1,20 @@
+<h1> Your Checked/Unchecked Items : </h1>
+<table style="width:100%" border=1>
+<tr>
+<thead>
+<th> CheckListItemUser ID: </th>
+<th> CheckListItem Id: </th>
+<th> User ID : </th>
+<th> Progress: </th>
+</thead>
+</tr>
+
+<% @checklistitemusers.each do |checklistitemuser| %>
+<tr>
+<td> <%= checklistitemuser.id %> </td>
+<td> <%= checklistitemuser.checklist_item_id %> </td>
+<td> <%= checklistitemuser.user_id %> </td>
+<td> <%= checklistitemuser.checked %> </td>
+<% end %>
+</tr>
+</table>
