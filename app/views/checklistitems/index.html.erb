@@ -6,8 +6,11 @@
 <th> Description: </th>
 </tr>
 </thead>
-
-<% @checklistitems.each do |checklistitem| %>
+<selct name="checklistitem_id">
+<% CheckListItem.all.all.each do |checklistitem| %>
+<option value="<%= checklistitem.id %>"><%= checklistitem.name %></option>
+      <% end %>
+    </select>
 <tr> 
 <td> <%= checklistitem.id %> </td>
 <td> <%= checklistitem.description %> </td>
