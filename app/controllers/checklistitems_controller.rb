@@ -1,7 +1,7 @@
 class ChecklistitemsController < ApplicationController
 
   def index
-    @checklistitem = CheckListItem.all
+    @checklistitems = CheckListItem.all
     render "index.html.erb"
   end
 

@@ -10,18 +10,18 @@ class EventsController < ApplicationController
 
   def create
     @event = Event.new(
-      user_name: params["user_name"],
+      user_id: current_user.id,
       description: params["description"],
-      event_type_id: event_type.id
-      )
+      event_type_id: params["event_type_id"]
+    )
     @event.save
     render "create.html.erb"
   end
 
   def show
-    @event_name = Event.user_id.name
     event_id = params[:id]
     @event = Event.find_by(id: event_id)
+    # @event_types = EventType.all 
     render "show.html.erb"
   end
 
@@ -34,10 +34,25 @@ class EventsController < ApplicationController
   def update
     event_id = params[:id]
     event = Event.find_by(id: event_id)
-    event.name = params[:name]
-    event.description = params[:description]
+    event.description = params["description"]
+    event.event_type_id = params["event_type_id"]
     event.save
     render "update.html.erb"
   end
+
+  # def edit
+  #   event_id = params[:id]
+  #   @event = Event.find_by(id: event_id)
+  #   render "edit.html.erb"
+  # end
+
+  # def update
+  #   event_id = params[:id]
+  #   event = Event.find_by(id: event_id)
+  #   event.name = params[:name]
+  #   event.description = params[:description]
+  #   event.save
+  #   render "update.html.erb"
+  # end
 
 end

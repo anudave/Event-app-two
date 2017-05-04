@@ -1,8 +1,8 @@
 class EventTypesCheckListItemsController < ApplicationController
   
-  def showchecklist
-    eventtypechecklistitem_id = params[:id]
-    @eventtypechecklistitems = EventTypeCheckListItem.find_by(id: eventtypechecklistitem_id )
-    render "showchecklist.html.erb"
+  def index
+    @event_types_check_list_items = EventTypeCheckListItem.all
+    render "index.html.erb"
   end
+
 end

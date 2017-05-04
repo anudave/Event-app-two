@@ -1,17 +1,5 @@
 <h1> Welcome to Event Planner App! </h1>
-<table style="width:100%" border=1>
-<thead>
-<tr>
-<th> Name : </th>
-<th> Info: </th>
-</tr>
-</thead>
-
 <% @event_types.each do |eventtype| %>
-<tr>
-<td> <a href="/eventtypes/<%= eventtype.id %>"> <%= eventtype.name %> </a></td> 
-<td> <%= eventtype.description %> </td>
-
+<p> Name : <a href="/eventtypes/<%= eventtype.id %>"> <%= eventtype.name %> </a></p> 
+<p> Info: <%= eventtype.description %> </p> 
 <% end %>
-</tr>
-</table>

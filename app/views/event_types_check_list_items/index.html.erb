@@ -1,0 +1,9 @@
+<h1> Joint Table : </h1>
+
+<% @event_types_check_list_items.each do |eventtypechecklistitem| %>
+<p> Table ID: <%= eventtypechecklistitem.id %> </p>
+<p> Event ID: <%= eventtypechecklistitem.event_type_id %> </p>
+<p> Checklist ID: <%= eventtypechecklistitem.checklistitem_id %> </p> <br>
+
+<% end %>
+

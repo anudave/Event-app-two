@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   
   get "/eventtypes" => "event_types#index"
   get "/eventtypes/:id" => "event_types#show"
-  get "/eventtypes/new" => "event_type#new"
+  # get "/eventtypes/new" => "event_type#new"
   # get "/eventtypes/:id/checklist" => "event_types_check_list_items#showchecklist"
 
   get "/checklistitems" => "checklistitems#index"
@@ -23,8 +23,11 @@ Rails.application.routes.draw do
   get "/events/:id" => "events#show"
   get "/events/:id/edit" => "events#edit"
   patch "/events/:id" => "events#update"
-
   
+  # get "/events/:id/edit" => "events#edit"
+  # patch "/events/:id" => "events#update"
+
+  get "/eventtypeschecklistitems" => "event_types_check_list_items#index"
 
 
 end

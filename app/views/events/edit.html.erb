@@ -1,7 +1,7 @@
-<h1>New Event</h1>
-<%= form_tag "/events", method: :post do %>
+<h1>Edit Event</h1>
+<%= form_tag "/events/#{@event.id}", method: :patch do %>
   <div>
-    Description: <input type="text" name="description">
+    Description: <input type="text" name="description" value=" <%= @event.description %>">
   </div>
   <div>
     Event type:
@@ -11,5 +11,5 @@
       <% end %>
     </select>
   </div>
-  <input type="submit" value="Submit">
+  <input type="submit" value="Update Event">
 <% end %>
