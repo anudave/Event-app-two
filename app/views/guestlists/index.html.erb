@@ -1,19 +1,27 @@
 <h1> Your GuestList: </h1>
 <table style="width:100%" border=1>
-<tr> 
+ 
 <thead>
+<tr>
 <th> Guest List ID: </th>
 <th> Guest Name: </th>
 <th> Status: </th>
 <th> Your Event ID: </th>
+</tr>
+</thead>
 
 
-<% @guestlists.each do |guestlist| %>
+
+<% @guestlists.each do |guestlist| %> 
 <tr>
 <td> <%= guestlist.id %> </td> 
 <td> <%= guestlist.name %> </td> 
-<td> <%= guestlist.status %> </td>
 <td><%= guestlist.event_id %> </td> 
-<% end %>
 </tr>
+<% end %>
+<select name="guestlist_id">
+ <% GuestList.all.all.each do |guestlist| %>
+<option value="<%= guestlist.status %>"><%= guestlist.status %></option>
+  <% end %>
+</select>
 </table>
