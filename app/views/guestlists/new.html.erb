@@ -1,0 +1,17 @@
+<h1>  Add New Guests </h1>
+<%= form_tag "/guestlists", method: :post do %>
+  <div> 
+    Name : <input type="text" name="form_name"> 
+  </div>
+
+<div>
+Status: <input type="text" name= "form_status"> 
+</div>
+
+<div> 
+Event Id: <input type="text" name= "form_event_id"> 
+</div>
+
+<input type="submit" class="btn btn-default" value="Add guests">
+
+<% end %>

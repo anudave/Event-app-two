@@ -16,6 +16,8 @@ Rails.application.routes.draw do
   get "/checklistitemusers" => "checklistitemusers#index"
 
   get "/guestlists" => "guestlists#index"
+  get "/guestlists/new" => "guestlists#new"
+  post "/guestlists" => "guestlists#create"
 
   get "/events" => "events#index"
   get "/events/new" => "events#new"
