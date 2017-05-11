@@ -15,7 +15,7 @@ class EventsController < ApplicationController
       event_type_id: params["event_type_id"]
     )
     @event.save
-    redirect to "/events/#{@check_list_items.id}"
+    redirect_to "/events/#{@event.id}"
   end
 
   def show
