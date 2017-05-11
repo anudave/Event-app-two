@@ -15,7 +15,7 @@ class EventsController < ApplicationController
       event_type_id: params["event_type_id"]
     )
     @event.save
-    render "create.html.erb"
+    redirect to "/events/#{@check_list_items.id}"
   end
 
   def show

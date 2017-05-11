@@ -5,6 +5,7 @@
 
 <p>Event type: <%= @event.event_type %></p>
 <p>Event type checklist items: <%= @event.event_type.check_list_items %></p>
+
 <% @event.event_type.check_list_items.sort.each do |check_list_item| %>
-  <a href=""><h4><%= check_list_item.description %></h4></a>
+ <a href=""><h4><%= check_list_item.description %> </h4> </a>
 <% end %>
