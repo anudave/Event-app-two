@@ -1,18 +1,19 @@
-<div id="app">
-  {{ message }}
-</div>
+<script>EVENT_ID = <%= @event.id %></script>
 
 <h1> Show Event: </h1>
 <h3> Event Type: <%= @event.event_type_id %> </h3>
 <h3> User ID: <%= @event.user_id %> </h3>
 <h3> Description: <%= @event.description %> </h3>
 
-<p>Event type: <%= @event.event_type %></p>
-<p>Event type checklist items: <%= @event.event_type.check_list_items %></p>
-
+<h2>RAILS...</h2>
 <% @event.event_type.check_list_items.sort.each do |check_list_item| %>
  <a href=""><h4><%= check_list_item.description %> </h4> </a>
 <% end %>
+
+<h2>VUE...</h2>
+<div id="app">
+  <a v-for="check_list_item in event.check_list_items" href=""><h4>{{ check_list_item.description }} <input type="checkbox" v-model="toggle"></h4></a>
+</div>
 <a href="/guestlists/new"><h4>Create Guestlist</h4></a>
 <a href="/invites/new"><h4>Send invite</h4></a>
 

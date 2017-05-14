@@ -31,5 +31,13 @@ Rails.application.routes.draw do
 
   get "/eventtypeschecklistitems" => "event_types_check_list_items#index"
 
+  namespace :api do
+    namespace :v1 do
+      get "/events" => "events#index"
+      get "/events/:id" => "events#show"
+
+    end
+  end
+
 
 end

@@ -21,7 +21,6 @@ class EventsController < ApplicationController
   def show
     event_id = params[:id]
     @event = Event.find_by(id: event_id)
-    # @event_types = EventType.all 
     render "show.html.erb"
   end
 
