@@ -12,7 +12,11 @@
 
 <h2>VUE...</h2>
 <div id="app">
-  <a v-for="check_list_item in event.check_list_items" href=""><h4>{{ check_list_item.description }} <input type="checkbox" v-model="toggle"></h4></a>
+  <!-- <a v-for="check_list_item in event.check_list_items" href=""><h4>{{ check_list_item.description }} <input type="checkbox" v-model="toggle"></h4></a> -->
+  <div v-for="check_list_item in event.check_list_items">
+    <input type="checkbox" v-model="check_list_item.checked" v-on:click="toggleCheckListItem(check_list_item)">
+    {{ check_list_item.description }}
+  </div>
 </div>
 <a href="/guestlists/new"><h4>Create Guestlist</h4></a>
 <a href="/invites/new"><h4>Send invite</h4></a>

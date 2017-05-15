@@ -35,6 +35,7 @@ Rails.application.routes.draw do
     namespace :v1 do
       get "/events" => "events#index"
       get "/events/:id" => "events#show"
+      patch "/checklistitemusers/:id" => "check_list_item_users#update"
 
     end
   end
