@@ -31,6 +31,16 @@ Rails.application.routes.draw do
 
   get "/eventtypeschecklistitems" => "event_types_check_list_items#index"
 
+  get "/invites" => "invites#index"
+  get "/invites/new" => "invites#new"
+  post  "/invites" => "invites#create"
+  get "/invites/:id" => "invites#show"
+  get "/invites/:id/edit" => "invites#edit"
+  patch "/invites/:id" => "invites#update"
+  delete "/invites/:id" => "invites#destroy"
+  
+
+
   namespace :api do
     namespace :v1 do
       get "/events" => "events#index"
