@@ -1,0 +1,17 @@
+<h1> All Invites </h1>
+
+<% @invites.each do |invite| %>
+
+
+<p> User Email: <%= invite.user_email %> </p>
+<p> Guest Email: <%= invite.guest_email %> </p>
+<p> Sent: <%= invite.sent %> </p>
+<p> User ID: <%= invite.user_id %> </p>
+<p> Host: <%= invite.host %> </p>
+<p> Location: <%= invite.location %> </p>
+<p> Address: <%= invite.address %> </p>
+<p> City: <%= invite.city %> </p>
+<p> Event Date/Time: <%= invite.event_date_time %> </p>
+<p> Message: <%= invite.message %> </p>
+
+<% end %>

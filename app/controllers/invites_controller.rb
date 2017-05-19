@@ -5,14 +5,27 @@ class InvitesController < ApplicationController
   end
 
   def new 
+    @event = Event.find_by(id: params[:event_id])
     render "new.html.erb"
   end
 
   def create
+    invite = Invite.new(
+     # title: params[:form_title],
+     host: params[:form_host],
+     # contact_email: params[:form_contact_email],
+     location: params[:form_location],
+     address: params[:form_address],
+     city: params[:form_city],
+     event_date_time: params[:form_date_time],
+     message: params[:form_message]
+     )
+    invite.save
     render "create.html.erb"
   end
 
   def show
+    @invite = Invite.find_by(id: params[:id])
     render "show.html.erb"
   end
 

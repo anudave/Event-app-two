@@ -38,6 +38,9 @@ Rails.application.routes.draw do
   get "/invites/:id/edit" => "invites#edit"
   patch "/invites/:id" => "invites#update"
   delete "/invites/:id" => "invites#destroy"
+
+
+
   
 
 
