@@ -1,10 +1,13 @@
 <h1> New Invite </h1>
 <%= form_tag "/invites", method: :post do %>
   <div>
-    User EMAIL :  <input type="text" name="form_guest_email" value="<%= @event.user.email %>">
+    User EMAIL :  <input type="text" name="form_user_email" value="<%= @event.user.email %>">
   </div>
   <div>
     Guest EMAIL: <input type="text" name="form_guest_email">
+  </div>
+  <div>
+    Guest Phone Number: <input type="text" name="form_guest_phone_number">
   </div>
   <div>
     Event Title: <input type="text" name="form_title"> 
@@ -38,12 +41,13 @@
   <div>
     Message: <textarea name="form_message" placeholder="Your event details..."> </textarea> 
   </div>
-  <input type="submit" class="btn btn-default" value="Create Invite">
-<% end %>
+  <div>
+    <input type="hidden" name="form_background_image" id="form_background_image">
+  </div>
 
 
 <!-- Pics Display -->
-<div id="myCarousel" class="carousel slide" data-ride="carousel">
+<div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval='false'>
   <!-- Indicators -->
   <ol class="carousel-indicators">
     <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
@@ -53,39 +57,39 @@
 <!-- Wrapper for slides -->
   <div class="carousel-inner">
     <div class="item active">
-      <img src="/event_images/invite1.jpg" alt="Los Angeles" height="600" width="600">
+      <a href=""><img src="/event_images/invite1.jpg" alt="Los Angeles" height="600" width="600"></a>
     </div>
 
     <div class="item">
-      <img src="/event_images/invite2.jpeg" alt="Chicago" height="600" width="600">
+      <a href=""><img src="/event_images/invite2.jpeg" alt="Chicago" height="600" width="600"></a>
     </div>
 
     <div class="item">
-      <img src="/event_images/invite3.png" alt="New York" height="600" width="600">
+      <a href=""><img src="/event_images/invite3.png" alt="New York" height="600" width="600"></a>
     </div>
 
     <div class="item">
-      <img src="/event_images/invite4.png" alt="New York" height="600" width="600">
+      <a href=""><img src="/event_images/invite4.png" alt="New York" height="600" width="600"></a>
     </div>
 
     <div class="item">
-      <img src="/event_images/invite5.jpg" alt="New York" height="600" width="600">
+      <a href=""><img src="/event_images/invite5.jpg" alt="New York" height="600" width="600"></a>
     </div>
 
     <div class="item">
-      <img src="/event_images/invite6.jpg" alt="New York" height="600" width="600">
+      <a href=""><img src="/event_images/invite6.jpg" alt="New York" height="600" width="600"></a>
     </div>
 
     <div class="item">
-      <img src="/event_images/invite7.jpg" alt="New York" height="600" width="600">
+      <a href=""><img src="/event_images/invite7.jpg" alt="New York" height="600" width="600"></a>
     </div>
 
     <div class="item">
-      <img src="/event_images/invite8.jpg" alt="New York" height="600" width="600">
+      <a href=""><img src="/event_images/invite8.jpg" alt="New York" height="600" width="600"></a>
     </div>
 
     <div class="item">
-      <img src="/event_images/invite9.jpg" alt="New York" height="600" width="600">
+      <a href=""><img src="/event_images/invite9.jpg" alt="New York" height="600" width="600"></a>
     </div>
 
   </div>
@@ -101,4 +105,17 @@
   </a>
 </div>
 
+  <input type="submit" class="btn btn-default" value="Create Invite">
+<% end %>
 
+
+
+<script type="text/javascript">
+/* global $ */
+  $(document).ready(function() {
+    $('#form_background_image').val($('.active').find('img').attr('src'));
+    $("#myCarousel").on('slide.bs.carousel',function(e) {
+      $('#form_background_image').val($(e.relatedTarget).find('img').attr('src'));
+    });
+  });
+</script>

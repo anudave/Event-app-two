@@ -6,7 +6,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
     data: {
       event: {}
     },
-    methods: {
+    methods:    {
+      
       toggleCheckListItem: function(check_list_item) {
         // check_list_item.completed = !check_list_item.completed;
         console.log(check_list_item.description, 'the id is', check_list_item.id);

@@ -39,6 +39,7 @@ Rails.application.routes.draw do
   patch "/invites/:id" => "invites#update"
   delete "/invites/:id" => "invites#destroy"
 
+  post "/twilios" => "twilios#send_invite"
 
 
   

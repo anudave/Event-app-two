@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>EventAppTwo</title>
+
+
+        <!-- Meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="/img/favicon.png">
+
+    <!-- Style -->
+    <link rel="stylesheet" href="/css/theme.css">
+
+
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <style>
+      .container {
+        color: white !important;
+        background-color: rgba(0,0,0,0.4);
+        margin-top: 5vh;
+      }
+
+    </style>
+  </head>
+
+
+  <body style="background: url(<%= @invite.background_image %>) no-repeat center center fixed; background-size: cover;">
+
+  <div class="container">
+    
+    <%= yield %>
+  </div>
+
+<!-- SCRIPTS -->
+<!-- <script src="/js/jquery-2.2.0.min.js"></script> -->
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/owl.carousel.min.js"></script>
+<script src="/js/jquery.magnific-popup.min.js"></script>
+<script src="/js/jquery.validate.min.js"></script>
+<script src="/js/jquery.stellar.min.js"></script>
+<script src="/js/wow.min.js"></script>
+<script src="/js/jquery.animateNumber.min.js"></script>
+<script src="/js/jquery.appear.js"></script>
+<script src="/js/general.js"></script>
+<!-- /SCRIPTS -->
+
+  </body>
+</html>

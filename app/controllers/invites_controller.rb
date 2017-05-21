@@ -11,14 +11,18 @@ class InvitesController < ApplicationController
 
   def create
     invite = Invite.new(
-     # title: params[:form_title],
+     user_email: params[:form_user_email],
+     guest_email: params[:form_guest_email],
+     phone_number: params[:form_guest_phone_number],
+     title: params[:form_title],
      host: params[:form_host],
-     # contact_email: params[:form_contact_email],
+     contact_email: params[:form_contact_email],
      location: params[:form_location],
      address: params[:form_address],
      city: params[:form_city],
      event_date_time: params[:form_date_time],
-     message: params[:form_message]
+     message: params[:form_message],
+     background_image: params[:form_background_image]
      )
     invite.save
     render "create.html.erb"
@@ -26,7 +30,7 @@ class InvitesController < ApplicationController
 
   def show
     @invite = Invite.find_by(id: params[:id])
-    render "show.html.erb"
+    render "show.html.erb", layout: "invite_layout.html.erb"
   end
 
   def edit 
