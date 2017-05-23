@@ -26,7 +26,7 @@ class InvitesController < ApplicationController
      custom_font: params[:form_custom_font]
      )
     invite.save
-    render "create.html.erb"
+    redirect_to "/invites/#{invite.id}"
   end
 
   def show
@@ -35,11 +35,28 @@ class InvitesController < ApplicationController
   end
 
   def edit 
+    invite_id = params[:id]
+    @invite = Invite.find_by(id: invite_id)
     render "edit.html.erb"
   end
 
   def update
-    render "update.html.erb"
+    invite_id = params[:id]
+    @invite = Invite.find_by(id: invite_id)
+    @invite.user_email = params[:form_user_email]
+    @invite.guest_email = params[:form_guest_email]
+    @invite.phone_number = params[:form_guest_phone_number]
+    @invite.title = params[:form_title]
+    @invite.host = params[:form_host]
+    @invite.contact_email = params[:form_contact_email]
+    @invite.location = params[:form_location]
+    @invite.address = params[:form_address]
+    @invite.city = params[:form_city]
+    @invite.event_date_time = params[:form_date_time]
+    @invite.message = params[:form_message]
+    @invite.background_image = params[:form_background_image]
+    @invite.custom_font = params[:form_custom_font]
+    redirect_to "/invites/#{@invite.id}"
   end
 
   def destroy
