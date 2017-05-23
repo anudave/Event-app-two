@@ -22,7 +22,8 @@ class InvitesController < ApplicationController
      city: params[:form_city],
      event_date_time: params[:form_date_time],
      message: params[:form_message],
-     background_image: params[:form_background_image]
+     background_image: params[:form_background_image],
+     custom_font: params[:form_custom_font]
      )
     invite.save
     render "create.html.erb"
