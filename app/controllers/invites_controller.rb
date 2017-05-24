@@ -11,6 +11,7 @@ class InvitesController < ApplicationController
 
   def create
     invite = Invite.new(
+     user_id: current_user.id,
      user_email: params[:form_user_email],
      guest_email: params[:form_guest_email],
      phone_number: params[:form_guest_phone_number],

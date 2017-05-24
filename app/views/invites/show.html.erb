@@ -1,19 +1,21 @@
 
 
+<!-- <h1> Invite Details: </h1> -->
+<p class="title"> <%= @invite.title %> </p>
+<p class="host"> Host: <%= @invite.host %> </p>
+<p align="center" class="message"> <%= @invite.message %> </p>
 
-<h1> Invite Details: </h1>
 
 <p> User Email: <%= @invite.user_email %> </p>
-<p> Guest Email: <%= @invite.guest_email %> </p>
-<p> Guest Contact: <%= @invite.phone_number %> </p>
-<p> User ID: <%= @invite.user_id %> </p>
-<p align="center" class="message"> Message: <br> <%= @invite.message %> </p>
-
-<p> Host: <%= @invite.host %> </p>
-<p class="location"> Location: <br> <%= @invite.location %> </p>
+<!-- <p> Guest Email: <%= @invite.guest_email %> </p> -->
+<!-- <p> Guest Contact: <%= @invite.phone_number %> </p>
+ --><p> User ID: <%= @invite.user.name %> </p>
+<!-- 
+<p align="center" class="message"> <%= @invite.message %> </p>
+ --><p class="location"> Location: <br> <%= @invite.location %> </p>
 <p class="address"> Address: <br> <%= @invite.address %> </p>
-<p> City: <%= @invite.city %> </p>
-<p class="time"> Event Date/Time: <br> <%= @invite.event_date_time %> </p>
+<!-- <p class="city"> City: <%= @invite.city %> </p> -->
+<p class="time"> Event Date/Time: <br> <%= @invite.event_date_time.strftime("%A, %b %d, %Y %l:%M %p") %> </p>
 
 <div style="text-align: center;">
 <a href="/events">HappyHour</a></div>

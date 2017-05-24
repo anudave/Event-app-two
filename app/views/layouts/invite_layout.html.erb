@@ -55,6 +55,18 @@
         font-size: 200%;
       }
 
+      .city {
+        font-size: 200%
+      }
+
+      .title {
+        font-family: '<%= @invite.custom_font %>';
+        font-size: 200%;
+      }
+
+      .host {
+        font-size: 200%;
+      }
 
 
       p {
@@ -74,7 +86,13 @@
   <body style="background: url(<%= @invite.background_image %>) no-repeat center center fixed; background-size: cover;">
 
   <div class="container">
-    
+  <!-- Footer Social -->
+                <ul class="social-inline">
+                    <li><a href="http://www.facebook.com/sharer.php?u=" + invite.background_image class="fa fa-fw fa-facebook"></a></li>
+                    <li><a href="https://twitter.com/share?url=" + invite.background_image class="fa fa-fw fa-twitter"></a></li>
+                    <!-- <li><a href="#" class="fa fa-fw fa-pinterest"></a></li> -->
+                </ul>
+                <!-- /Footer Social -->
     <%= yield %>
   </div>
 
