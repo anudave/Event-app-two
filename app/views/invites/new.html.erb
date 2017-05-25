@@ -9,13 +9,13 @@
         User EMAIL :  <input class="form-control input-sm" type="text" name="form_user_email" value="<%= @event.user.email %>">
       </div>
   <div class="form-group">
-    Guest EMAIL: <input class="form-control input-sm" type="text" name="form_guest_email">
+    Guest EMAIL: <input class="form-control input-sm" type="text" name="form_guest_email" value="russell@email.com">
   </div>
   <div class="form-group">
-    Guest Phone Number: <input class="form-control input-sm" type="text" name="form_guest_phone_number">
+    Guest Phone Number: <input class="form-control input-sm" type="text" name="form_guest_phone_number" value="7088031789">
   </div>
   <div class="form-group">
-    Event Title: <input class="form-control input-sm" type="text" name="form_title"> 
+    Event Title: <input class="form-control input-sm" type="text" name="form_title" value="A fun Party"> 
   </div>
   <div class="form-group">
     Event type:
@@ -26,7 +26,7 @@
     </select>
   </div>
   <div class="form-group"> 
-    Hosted By: <input class="form-control input-sm" type="text" name="form_host"> 
+    Hosted By: <input class="form-control input-sm" type="text" name="form_host" value="Peter"> 
   </div>
   <div class="form-group">
     Email Contact: <input class="form-control input-sm" type="text" name="form_contact_email" value="<%= @event.user.email %>">  
@@ -35,20 +35,20 @@
 
 <div class="col-md-6">
   <div class="form-group">
-    Location: <input class="form-control input-sm" type="text" name="form_location"> 
+    Location: <input class="form-control input-sm" type="text" name="form_location" value="HappyPlace"> 
   </div>
   <div class="form-group">
-    Address: <input class="form-control input-sm" type="text" name="form_address">
+    Address: <input class="form-control input-sm" type="text" name="form_address" value="222 W Merchandize Mart">
   </div>
   <div class="form-group">
-    City: <input class="form-control input-sm" type="text" name="form_city">
+    City: <input class="form-control input-sm" type="text" name="form_city" value="Chicago">
   </div>
   <div class="form-group">
     Event Date/Time:
     <%= datetime_field_tag :form_date_time, '', class: "form-control input-sm" %>
   </div>
   <div class="form-group">
-    Message: <textarea name="form_message" class="form-control input-sm" placeholder="Your event details..."> </textarea> 
+    Message: <textarea name="form_message" class="form-control input-sm" placeholder="Your event details..."> Join us for a fun and exciting celebration !!!</textarea> 
   </div>
   <div class="form-group"> Custom Font: 
   <select class="form-control input-sm" name="form_custom_font">

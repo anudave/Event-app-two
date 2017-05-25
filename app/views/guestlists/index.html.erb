@@ -1,22 +1,20 @@
 <h1> Your GuestList: </h1>
-
 <% if current_user %>
+
   <table style="width:100%" border=1>
  
 <thead>
 <tr>
-  <th> Guest List ID: </th>
+  
   <th> Guest Name: </th>
   <th> Status: </th>
-  <th> Event ID: </th>
+  <th> Event: </th>
 </tr>
 </thead>
 
-<% @guestlists.each do |guestlist| %> 
+<% @guestlists.sort.each do |guestlist| %> 
 <tr>
-  <td>
-    <%= guestlist.id %>
-  </td> 
+  
   <td>
     <%= guestlist.name %>
   </td> 
@@ -24,11 +22,11 @@
     <%= guestlist.status %></a>
   </td> 
   <td>
-    <%= guestlist.event_id %> 
+    <%= guestlist.event_id %>. <%= guestlist.event.description %>  
   </td> 
-  <% end %>
+<% end %>
+<% end %>
 </tr>
 
 
 </table>
-<% end %>

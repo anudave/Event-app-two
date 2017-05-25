@@ -6,6 +6,7 @@ class GuestlistsController < ApplicationController
   end
 
   def new
+    @event_id = params[:event_id]
     render "new.html.erb"
   end
 
@@ -13,8 +14,8 @@ class GuestlistsController < ApplicationController
     @guestlist = GuestList.new(
       name: params[:form_name],
       status: params[:form_status],
-      event_id:  params[:form_event_id]
-    )
+      event_id: params[:event_id]
+      )
     @guestlist.save
     redirect_to "/guestlists"
   end
