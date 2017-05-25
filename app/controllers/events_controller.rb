@@ -1,6 +1,7 @@
 class EventsController < ApplicationController
   def index
-    @events = Event.all
+    # @events = Event.all
+    @events = current_user.events
     render "index.html.erb"
   end
 
@@ -21,6 +22,7 @@ class EventsController < ApplicationController
   def show
     event_id = params[:id]
     @event = Event.find_by(id: event_id)
+
     render "show.html.erb"
   end
 

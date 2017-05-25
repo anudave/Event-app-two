@@ -18,6 +18,9 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+    <link href="https://fonts.googleapis.com/css?family=Rochester" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Delius+Swash+Caps" rel="stylesheet">
   </head>
 
 
@@ -85,13 +88,13 @@
                                     
                                 </ul>
                             </li>
-                            <li class="dropdown">
+                            <!-- <li class="dropdown">
                                 <a class="dropdown-toggle" href="#">Events</a>
                                 <ul class="dropdown-menu">
                                     <li><a href="/events/#{@event.id}">Your Events</a></li>
                                     <li><a href="/guestlists/#{@guestlist.id}">Your Guestlist</a></li>
                                 </ul>
-                            </li>
+                            </li> -->
                             <!-- <li class="dropdown">
                                 <a class="dropdown-toggle" href="blog.html">Blog</a>
                                 <ul class="dropdown-menu">
@@ -100,17 +103,27 @@
                                 </ul>
                             </li> -->
                             <li class="dropdown">
-                                <a class="dropdown-toggle" href="projects.html">Projects</a>
+                                <a class="dropdown-toggle" href="projects.html">Events</a>
                                 <ul class="dropdown-menu">
                                     <li><a href="projects-2col.html">Projects - 2 Columns</a></li>
-                                    <li><a href="projects-3col.html">Projects - 3 Columns</a></li>
+                                   <!--  <li><a href="projects-3col.html">Projects - 3 Columns</a></li> -->
                                     <li><a href="projects.html">Projects - 4 Columns</a></li>
-                                    <li><a href="projects-6col.html">Projects - 6 Columns</a></li>
+                                    <!-- <li><a href="projects-6col.html">Projects - 6 Columns</a></li> -->
                                     <li><a href="single-project.html">Projects - Single Project</a></li>
                                 </ul>
                             </li>
-                            <li><a href="/signup">Sign Up</a></li>
-                            <li><a href="/logout"> Logout</a></li>
+                            
+                                <% if current_user %>
+                                <li><a href="/events">Your Events</a></li>
+                                <li><a href="/guestlists"> Your Guest Lists </a></li>
+                                <li> <a href="invites"> Your Invites </a></li>
+                                <li><a href="/logout">Logout</a></li>
+                                <% else %>
+                                <li><a href="/signup">Sign Up</a></li>
+                                <li><a href="/login">Login</a></li>
+                                <% end %>
+
+
                             <!-- <li><a href="404.html">404</a></li> -->
                         </ul>
                     </div>
@@ -126,7 +139,7 @@
     <div id="carousel-home" class="slider owl-carousel owl-theme">
 
         <!-- Slide -->
-        <div class="item mask mask-black" style="background: url(/images/join-now.jpg) no-repeat center top / cover;" data-stellar-background-ratio="0.4">
+        <!-- <div class="item mask mask-black" style="background: url(/images/join-now.jpg) no-repeat center top / cover;" data-stellar-background-ratio="0.4">
             <div class="full-wh relative" data-stellar-ratio="0.5">
                 <div class="container" >
                     <div class="col-md-6 col-md-offset-2 relative">
@@ -141,7 +154,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
         <!-- /Slide -->
 
         <!-- Slide -->
@@ -151,8 +164,8 @@
                     <div class="col-md-6 col-md-offset-2 relative">
                         <h1 class="animated fadeInDown wow" data-wow-delay="0.2s">Make every hour the Happy Hour of your life</h1>
                         <div class="subtitle animated fadeInUp wow" data-wow-duration="0.9s" data-wow-delay="0.5s">
-                            There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in
-                            some form, by injected humour.
+                            <!-- There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in
+                            some form, by injected humour. -->
                         </div>
                         <div class="animated fadeInUp wow" data-wow-delay="1.0s">
                             <a href="#" class="btn btn-rounded btn-white-o" data-toggle="modal" data-target="#get-in-touch">Get In Touch</a>
@@ -256,17 +269,17 @@
             <!-- Footer Column -->
             <div class="col-md-2 col-sm-6 col-xs-12 footer-col">
 
-                <h4 class="title">Site Menu</h4>
+                <!-- <h4 class="title">Site Menu</h4> -->
 
                 <!-- Footer Menu -->
-                <ul class="menu">
+                <!-- <ul class="menu">
                     <li><a href="#">Home</a></li>
                     <li><a href="#">Your Eventst</a></li>
                     <li><a href="#">Your Guestlist</a></li>
                     <li><a href="#">Projects</a></li>
                     <li><a href="#">Blog</a></li>
                     <li><a href="#">Contact</a></li>
-                </ul>
+                </ul> -->
                 <!-- /Footer Menu -->
 
             </div>
@@ -294,16 +307,16 @@
 
                 <!-- Footer Tags -->
                 <div class="tags">
-                    <a href="#" class="tag">web</a>
-                    <a href="#" class="tag">design</a>
-                    <a href="#" class="tag">clean</a>
-                    <a href="#" class="tag">minimal</a>
-                    <a href="#" class="tag">pixel perfect</a>
-                    <a href="#" class="tag">blog</a>
-                    <a href="#" class="tag">gallery</a>
-                    <a href="#" class="tag">landing</a>
-                    <a href="#" class="tag">business</a>
-                    <a href="#" class="tag">portfolio</a>
+                    <a href="#" class="tag">birthday</a>
+                    <a href="#" class="tag">bridal shower</a>
+                    <a href="#" class="tag">baby shower</a>
+                    <a href="#" class="tag">party themes</a>
+                    <a href="#" class="tag">thanksgiving</a>
+                    <a href="#" class="tag">luncheon</a>
+                    <a href="#" class="tag">reunion</a>
+                    <a href="#" class="tag">graduation</a>
+                    <a href="#" class="tag">outing</a>
+                    <a href="#" class="tag">wedding</a>
                 </div>
                 <!-- /Footer Tags -->
 

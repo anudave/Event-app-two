@@ -1,7 +1,7 @@
 class GuestlistsController < ApplicationController
   
   def index
-    @guestlists = GuestList.all
+    @guestlists = current_user.guest_lists
     render "index.html.erb"
   end
 
@@ -10,13 +10,19 @@ class GuestlistsController < ApplicationController
   end
 
   def create 
-    guestlist = GuestList.new(
+    @guestlist = GuestList.new(
       name: params[:form_name],
       status: params[:form_status],
       event_id:  params[:form_event_id]
     )
-    guestlist.save
-    render "create.html.erb"
+    @guestlist.save
+    redirect_to "/guestlists"
+  end
+
+  def show 
+    guestlist_id = params[:id]
+    @guestlist = GuestList.find_by(id: guestlist_id)
+    render "show.html.erb"
   end
 
 

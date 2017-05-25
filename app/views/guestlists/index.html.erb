@@ -1,9 +1,7 @@
 <h1> Your GuestList: </h1>
 
-
-
-
-<table style="width:100%" border=1>
+<% if current_user %>
+  <table style="width:100%" border=1>
  
 <thead>
 <tr>
@@ -14,8 +12,6 @@
 </tr>
 </thead>
 
-
-
 <% @guestlists.each do |guestlist| %> 
 <tr>
   <td>
@@ -25,13 +21,14 @@
     <%= guestlist.name %>
   </td> 
   <td>
-    <a href=""><%= guestlist.status %></a>
+    <%= guestlist.status %></a>
   </td> 
   <td>
     <%= guestlist.event_id %> 
   </td> 
+  <% end %>
 </tr>
-<% end %>
+
 
 </table>
-
+<% end %>

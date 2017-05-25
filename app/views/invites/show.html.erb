@@ -1,15 +1,14 @@
 
-
 <!-- <h1> Invite Details: </h1> -->
 <p class="title"> <%= @invite.title %> </p>
 <p class="host"> Host: <%= @invite.host %> </p>
 <p align="center" class="message"> <%= @invite.message %> </p>
-
-
-<p> User Email: <%= @invite.user_email %> </p>
+<!-- 
+<p> Contact Person: <%= @invite.user.name %> </p>
+ --><p> Contact Host: <%= @invite.user_email %> </p>
 <!-- <p> Guest Email: <%= @invite.guest_email %> </p> -->
 <!-- <p> Guest Contact: <%= @invite.phone_number %> </p>
- --><p> User ID: <%= @invite.user.name %> </p>
+ -->
 <!-- 
 <p align="center" class="message"> <%= @invite.message %> </p>
  --><p class="location"> Location: <br> <%= @invite.location %> </p>
