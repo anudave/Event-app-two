@@ -3,10 +3,10 @@ Rails.application.routes.draw do
 
   get "/signup" => "users#new"
   post "/users" => "users#create"
-  get "/login" => "sessions#new"
+  get "/" => "sessions#new"
   post "/login" => "sessions#create"
   get "/logout" => "sessions#destroy"
-  
+
   get "/eventtypes" => "event_types#index"
   get "/eventtypes/:id" => "event_types#show"
   # get "/eventtypes/new" => "event_type#new"
@@ -27,7 +27,7 @@ Rails.application.routes.draw do
   get "/events/:id" => "events#show"
   get "/events/:id/edit" => "events#edit"
   patch "/events/:id" => "events#update"
-  
+
   # get "/events/:id/edit" => "events#edit"
   # patch "/events/:id" => "events#update"
 
@@ -43,8 +43,8 @@ Rails.application.routes.draw do
 
   post "/twilios" => "twilios#send_invite"
 
-  
-  
+
+
 
 
   namespace :api do
