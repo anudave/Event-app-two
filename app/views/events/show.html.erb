@@ -1,5 +1,5 @@
 
-<script>EVENT_ID = <%= @event.id %></script> 
+<script>EVENT_ID:<% @event.id %></script>
 
 <h1> Your Event Checklist: </h1>
 <!-- <h3> Event Type: <%= @event.event_type_id %> </h3> -->
@@ -15,7 +15,7 @@
   </div>
 </div>
 <br>
-<a href="/guestlists/new?event_id=<%= @event.id %>""><h4>Create Guestlist</h4></a> 
+<a href="/guestlists/new?event_id=<%= @event.id %>""><h4>Create Guestlist</h4></a>
 
 <a href="/invites/new?event_id=<%= @event.id %>"><h4>Send invite</h4></a>
 

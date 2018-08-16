@@ -2,31 +2,33 @@
 <% if current_user %>
 
   <table style="width:100%" border=1>
- 
+
 <thead>
 <tr>
-  
+
   <th> Guest Name: </th>
   <th> Status: </th>
   <th> Event: </th>
 </tr>
 </thead>
 
-<% @guestlists.sort.each do |guestlist| %> 
+<% @guestlists.sort.each do |guestlist| %>
 <tr>
-  
+
   <td>
     <%= guestlist.name %>
-  </td> 
+  </td>
   <td>
     <%= guestlist.status %></a>
-  </td> 
+  </td>
   <td>
-    <%= guestlist.event_id %>. <%= guestlist.event.description %>  
-  </td> 
+    <%= guestlist.event_id %>. <%= guestlist.event.description %>
+  </td>
 <% end %>
 <% end %>
 </tr>
 
 
 </table>
+
+<a href="/events/show.html.erb"><h3> Back to Checklist </h3></a>
